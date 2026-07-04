@@ -1,0 +1,509 @@
+/* 
+   1. 共通ベース & タイトル
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 60px 20px;
+}
+
+.site-title {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    color: #837264;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.page-title {
+    font-size: 26px;
+    color: #837264;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 0.5px;
+}
+
+
+.form-container {
+    width: 100%;
+    margin: 60px 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.form-inner {
+    max-width: 850px;
+    
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.form-group.align-top {
+    align-items: flex-start;
+    
+}
+
+.form-label {
+    font-weight: bold;
+    white-space: nowrap;
+    width: 260px;
+    
+    flex-shrink: 0;
+    font-size: 15px;
+    color: #333333;
+}
+
+.form-group.align-top .form-label {
+    padding-top: 10px;
+}
+
+.required {
+    color: #d85c47;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+
+.form-input-row {
+    flex: 1;
+    display: flex;
+    width: 100%;
+}
+
+
+.form-input {
+    width: 100% !important;
+    max-width: none !important;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 2px;
+    padding: 13px 16px;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #b3b3b3;
+}
+
+
+.name-inputs,
+.tel-inputs {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.tel-inputs {
+    gap: 12px;
+    align-items: center;
+}
+
+.tel-dash {
+    color: #333333;
+    font-size: 14px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 性別 */
+.gender-options {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.gender-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.gender-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #837264;
+    cursor: pointer;
+}
+
+/* お問い合わせの種類（セレクトボックス） */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-custom {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #b3b3b3;
+    pointer-events: none;
+}
+
+/* テキストエリア */
+.textarea-custom {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.6;
+}
+
+/* 
+   5. 確認画面ボタン
+    */
+.form-buttons {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.submit-button {
+    background-color: #837264;
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    padding: 14px 65px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #726255;
+}
+
+/* エラーメッセージ用 */
+.alert-error {
+    background-color: #fce8e6;
+    border: 1px solid #efc2bc;
+    color: #e06a55;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.alert-error ul {
+    list-style: none;
+}
+
+/* --- ここから確認画面（confirm）専用のスタイル --- */
+
+
+.confirm-table th {
+    width: 260px !important;
+    background-color: #bfb0a8 !important;
+    color: #ffffff !important;
+    padding: 20px 30px !important;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 1px solid #ffffff !important;
+}
+
+
+.confirm-table td {
+    padding: 20px 30px !important;
+    border-bottom: 1px solid #f2ece9 !important;
+    font-size: 14px !important;
+    color: #333333 !important;
+}
+
+.confirm-table tr:last-child th,
+.confirm-table tr:last-child td {
+    border-bottom: 1px solid #f2ece9 !important;
+}
+
+
+.confirm-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    gap: 40px !important;
+    margin-top: 40px !important;
+    width: 100% !important;
+}
+
+
+.confirm-buttons .submit-button {
+    background-color: #837264 !important;
+    color: #ffffff !important;
+    border-radius: 2px !important;
+    padding: 12px 55px !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    letter-spacing: 1px !important;
+    margin: 0 !important;
+    width: auto !important;
+    
+    display: inline-block !important;
+}
+
+.confirm-buttons .submit-button:hover {
+    background-color: #726255 !important;
+}
+
+
+
+.confirm-buttons button.back-button {
+    background: none !important;
+    background-color: transparent !important;
+    
+    border: none !important;
+    border-radius: 0 !important;
+    color: #bfb0a8 !important;
+    
+    font-size: 14px !important;
+    text-decoration: underline !important;
+    
+    padding: 12px 10px !important;
+    font-weight: normal !important;
+    margin: 0 !important;
+    
+    width: auto !important;
+    
+    max-width: none !important;
+    display: inline-block !important;
+    
+    cursor: pointer !important;
+}
+
+.confirm-buttons button.back-button:hover {
+    color: #a69790 !important;
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* 
+    ここから管理画面（Admin）専用のスタイル
+ */
+
+/* 全体のレイアウト調整 */
+.admin-container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.admin-main-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.admin-title-sub {
+    text-align: center;
+    font-size: 24px;
+    color: #5b4a42;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+/* ログアウトボックス */
+.logout-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 10px;
+}
+
+.btn-logout {
+    background-color: transparent;
+    border: 1px solid #cbd5e0;
+    color: #718096;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* 検索フォーム */
+.search-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 150px;
+    color: #4a5568;
+}
+
+.keyword-input {
+    width: 250px;
+}
+
+.btn-search {
+    background-color: #5b4a42;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-reset {
+    background-color: #decbc6;
+    color: #5b4a42;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* アクションエリア（エクスポート・ページネーション） */
+.table-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.btn-export {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination li.active span {
+    background-color: #8b766c;
+    color: #fff;
+    border-color: #8b766c;
+}
+
+/* 一覧テーブル */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.admin-table th {
+    background-color: #8b766c;
+    color: #fff;
+    text-align: left;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 各列の横幅調整 */
+.col-name {
+    width: 20%;
+}
+
+.col-gender {
+    width: 15%;
+}
+
+.col-email {
+    width: 35%;
+}
+
+.col-category {
+    width: 20%;
+}
+
+.col-btn {
+    width: 10%;
+}
+
+/* 詳細ボタン */
+.btn-detail {
+    background-color: #edf2f7;
+    color: #bfb0a8;
+    border: none;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+    text-decoration: none;
+}

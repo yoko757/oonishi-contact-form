@@ -1,0 +1,77 @@
+
+.thanks-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #ffffff;
+    z-index: 9999;
+    
+}
+
+
+.thanks-bg-text {
+    position: absolute;
+    font-family: Georgia, serif;
+    font-size: clamp(80px, 14vw, 180px);
+    
+    color: #f7f5f4;
+    
+    font-weight: normal;
+    white-space: nowrap;
+    user-select: none;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+
+.thanks-content {
+    position: relative;
+    z-index: 2;
+    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.thanks-message {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+
+.thanks-content .thanks-home-btn {
+    background-color: #837264 !important;
+    
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 2px !important;
+    padding: 14px 65px !important;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.thanks-content .thanks-home-btn:hover {
+    background-color: #726255 !important;
+}
